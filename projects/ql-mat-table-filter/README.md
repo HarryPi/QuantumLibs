@@ -1,12 +1,12 @@
 ## Filter input for Angular Material tables
 
-###Installation
+### Installation
 ```npm install --save ql-mat-table-filter@latest```
 
 A simple filter library for the angular material tables. Compatible with angular material colour 
 schemes.
 
-####Required parameters
+#### Required parameters
 
 Takes a predicate function for filtering, the function must return a boolean value.
 ```action: <T>(data: T, filterValue: string) => boolean;```
@@ -18,7 +18,7 @@ Also a references to the MatTableDataSource must be passed as input
 </ql-mat-table-filter>
 ```
 
-####Optional parameters
+#### Optional parameters
 Can customize the input form look based on the material form design.
 
 ```
