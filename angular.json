@@ -42,7 +42,48 @@
           }
         }
       }
-    }},
+    },
+    "ql-mat-table": {
+      "projectType": "library",
+      "root": "projects/ql-mat-table",
+      "sourceRoot": "projects/ql-mat-table/src",
+      "prefix": "ql",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ql-mat-table/tsconfig.lib.json",
+            "project": "projects/ql-mat-table/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ql-mat-table/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ql-mat-table/src/test.ts",
+            "tsConfig": "projects/ql-mat-table/tsconfig.spec.json",
+            "karmaConfig": "projects/ql-mat-table/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ql-mat-table/tsconfig.lib.json",
+              "projects/ql-mat-table/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "analytics": "494f9c64-11de-4751-a3e6-8efa87ac9f52"
   },

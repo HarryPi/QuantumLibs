@@ -19,6 +19,10 @@
       "ql-mat-table-filter": [
         "dist/ql-mat-table-filter/ql-mat-table-filter",
         "dist/ql-mat-table-filter"
+      ],
+      "ql-mat-table": [
+        "dist/ql-mat-table/ql-mat-table",
+        "dist/ql-mat-table"
       ]
     }
   },
