@@ -14,7 +14,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ql-mat-table-filter": [
+        "dist/ql-mat-table-filter/ql-mat-table-filter",
+        "dist/ql-mat-table-filter"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
