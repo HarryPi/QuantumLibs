@@ -1,0 +1,19 @@
+<div fxLayout="row">
+    <table mat-table>
+        <ng-container *ngFor="let columnConfig of tableConfig.columnConfig"
+                      [matColumnDef]="columnConfig.columnDef">
+            <th *matHeaderCellDef>
+                {{ columnConfig.columnDisplayName }}
+            </th>
+            <td *matHeaderCellDef="let obj"
+                mat-cell>
+                {{ obj[columnConfig.value] }}
+            </td>
+        </ng-container>
+        <tr *matHeaderRowDef="displayColumns"
+            mat-header-row>
+        </tr>
+        <tr *matRowDef="let row; columns: displayColumns;"
+            mat-row></tr>
+    </table>
+</div>
