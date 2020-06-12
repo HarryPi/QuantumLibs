@@ -1,6 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Observable, Subscription } from 'rxjs';
 import { NoTableConfigError } from './errors/no-table-config.error';
 import { QlTableConfig } from './models/ql-table.config';
 
@@ -12,22 +11,14 @@ import { QlTableConfig } from './models/ql-table.config';
 export class QlMatTableComponent implements OnInit, OnDestroy {
 
   @Input()
-  /**
-   * An observable data source where the table will render according to the table config
-   */
-  dataSource: Observable<MatTableDataSource<any>>;
+  dataSource: MatTableDataSource<any> = new MatTableDataSource<any>([]);
 
   @Input()
-  /**
-   * The {@link QlTableConfig} for rendering
-   */
   tableConfig: QlTableConfig;
 
-  private subscription: Subscription;
   displayColumns: string[];
 
   constructor() {
-    this.subscription = new Subscription();
   }
 
   ngOnInit(): void {
@@ -38,7 +29,6 @@ export class QlMatTableComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 
 }

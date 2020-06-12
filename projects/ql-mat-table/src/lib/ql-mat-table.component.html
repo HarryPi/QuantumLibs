@@ -1,11 +1,12 @@
 <div fxLayout="row">
-    <table mat-table>
+    <table fxFlex="100" mat-table
+           [dataSource]="dataSource">
         <ng-container *ngFor="let columnConfig of tableConfig.columnConfig"
                       [matColumnDef]="columnConfig.columnDef">
             <th *matHeaderCellDef>
                 {{ columnConfig.columnDisplayName }}
             </th>
-            <td *matHeaderCellDef="let obj"
+            <td *matCellDef="let obj"
                 mat-cell>
                 {{ obj[columnConfig.value] }}
             </td>
@@ -13,7 +14,7 @@
         <tr *matHeaderRowDef="displayColumns"
             mat-header-row>
         </tr>
-        <tr *matRowDef="let row; columns: displayColumns;"
+        <tr *matRowDef="let obj; columns: displayColumns;"
             mat-row></tr>
     </table>
 </div>

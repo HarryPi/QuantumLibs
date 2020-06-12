@@ -1,6 +1,6 @@
 {
   "name": "ql-mat-table",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "peerDependencies": {
     "@angular/common": "^9.1.11",
     "@angular/core": "^9.1.11",
@@ -8,5 +8,9 @@
     "@angular/cdk": "^9.2.4",
     "@angular/material": "^9.2.4",
     "rxjs": "^6.5.5"
+  },
+  "scripts": {
+    "build": "cd ../../projects/ql-mat-table && ng build ql-mat-table --prod",
+    "publish": "npm run build && cd ../../dist/ql-mat-table && npm publish"
   }
 }
